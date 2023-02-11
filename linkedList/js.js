@@ -54,11 +54,18 @@
 
 // DOUBLY LINKED LIST ///////////////////////////////////////////
 
+const ul = document.querySelector('ul');
+const inp = document.querySelector('input');
+const btn = document.querySelector('button');
+
+let id = 0;
+
 class Node{
     constructor(value,next = null,prev = null){
         this.value = value;
         this.next = next;
         this.prev = prev;
+        this.id = id++;
     }
 }
 
