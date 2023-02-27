@@ -7,6 +7,106 @@
     <title>Document</title>
 </head>
 <body>
+    <div>
+        <section>
+            <input type="textbox" class="input">
+            <button>Push to Stack</button>
+        </section>
+        <p class="text hide">Not allow bad entries (non-numeric or operation), no operations until two numbers on the stack</p>
+    </div>
+
+    <ul></ul>
+    <style>
+
+        section{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100px;
+            width: 400px;
+        }
+        button {
+            position: relative;
+            background-color: rgb(230, 34, 77);
+            border-radius: 5px;
+            box-shadow: rgb(121, 18, 55) 0px 4px 0px 0px;
+            padding: 5px;
+            background-repeat: no-repeat;
+            box-sizing: border-box;
+            width: 154px;
+            height: 30px;
+            color: #fff;
+            border: none;
+            font-size: 20px;
+            transition: all .3s ease-in-out;
+            z-index: 1;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        button::before {
+            content: "";
+            background-color: rgb(248, 50, 93);
+            width: 0;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: width 700ms ease-in-out;
+            display: inline-block;
+        }
+
+button:hover::before {
+  width: 100%;
+}
+
+
+        .hide{
+            display: none;
+        }
+
+        .input {
+            color: #8707ff;
+            border: 2px solid #8707ff;
+            border-radius: 10px;
+            padding: 10px 25px;
+            background: transparent;
+            max-width: 190px;
+        }
+
+.input:active {
+ box-shadow: 2px 2px 15px #8707ff inset;
+}
+
+        .text{
+            background-color: #f00;
+            border-radius: 5px;
+            width: 500px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            padding: 1em;
+        }
+
+
+        ul{
+            display: flex;
+            justify-content: flex-end;
+            width: 500px;
+        }
+        li{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            width: 40px;
+            height: 40px;
+            background-color: #f00;
+            color: #fff;
+            margin-left: 5px;
+        }
+    </style>
     <script src="js.js"></script>
 </body>
 </html>
