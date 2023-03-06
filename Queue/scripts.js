@@ -27,6 +27,8 @@
 // console.log(queue.peek())
 
 
+///////////////////////////  sieveOfEratosthene algorithm   ///////////////////////////////////////////////////////////////////
+
 const btn = document.querySelector('button');
 const inp = document.getElementById('inp');
 const ul = document.querySelector('ul');
