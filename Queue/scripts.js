@@ -59,6 +59,16 @@ class Node {
       this.tail = newNode;
       this.length++;
     }
+
+    traverse(){
+      let output = '';
+      let currentNode = this.head
+      while(currentNode !== null){
+        output += currentNode.value+" ";
+        currentNode = currentNode.next
+      }
+      return output
+    }
   
     dequeue() {
       if (!this.head) {
@@ -87,7 +97,7 @@ class Node {
       q1.enqueue(i);
     }
     
-    ul.innerHTML +=`<li>Iteration ${iteration}: Q1 = ${q1.length > 0 ? q1.toArray().join(' ') : ''}, Q2 = ${q2.toArray().join(' ')}</li>`;
+    ul.innerHTML += `<li>Iteration ${iteration}: Q1 = ${q1.traverse()}, Q2 = ${q2.traverse()}</li>`
     while (q1.length > 0) {
       const x = q1.dequeue();
       q2.enqueue(x);
@@ -104,7 +114,7 @@ class Node {
           } else {
             q1.head = current.next;
           }
-  
+          
           q1.length--;
         } else {
           prev = current;
@@ -114,24 +124,10 @@ class Node {
       }
       
       iteration++ 
-      ul.innerHTML +=`<li>Iteration ${iteration}: Q1 = ${q1.length > 0 ? q1.toArray().join(' ') : ''}, Q2 = ${q2.toArray().join(' ')}</li>`;
+      ul.innerHTML += `<li>Iteration ${iteration}: Q1 = ${q1.traverse()}, Q2 = ${q2.traverse()}</li>`
     }
-    
-    return q2.toArray();
   }
   
-  
-  Queue.prototype.toArray = function() {
-    const result = [];
-    let current = this.head;
-    
-    while (current) {
-      result.push(current.value);
-      current = current.next;
-    }
-    
-    return result;
-  }
   
   btn.addEventListener('click',()=>{
     if(inp.value !== ''){
